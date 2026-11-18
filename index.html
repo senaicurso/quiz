@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Guardião do Planeta</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <!-- TELA 1: INÍCIO -->
+      <section id="tela-inicio" class="tela ativa">
+        <div class="emoji-grande flutuar">🌍</div>
+        <h1>Guardião do Planeta</h1>
+        <p class="subtitulo">
+          Responda às perguntas e descubra o quanto você sabe sobre
+          sustentabilidade!
+        </p>
+        <button id="btn-comecar" class="botao">Começar ▶️</button>
+      </section>
+
+      <!-- TELA 2: PERGUNTA -->
+      <section id="tela-pergunta" class="tela">
+        <div class="topo">
+          <span id="contador">Pergunta 1 de 8</span>
+          <div class="barra"><div id="progresso"></div></div>
+        </div>
+
+        <h2 id="texto-pergunta">Texto da pergunta</h2>
+        <div id="opcoes"></div>
+
+        <div id="feedback" class="feedback escondido">
+          <p id="feedback-titulo"></p>
+          <p id="feedback-texto"></p>
+          <button id="btn-proxima" class="botao">Próxima →</button>
+        </div>
+      </section>
+
+      <!-- TELA 3: RESULTADO -->
+      <section id="tela-resultado" class="tela">
+        <div id="resultado-emoji" class="emoji-grande pular">🌳</div>
+        <p class="voce-e">Você é um(a)...</p>
+        <h2 id="resultado-titulo">Título</h2>
+        <p id="resultado-pontos" class="pontos">0 de 0 acertos</p>
+        <p id="resultado-texto">Texto do perfil</p>
+        <p class="dica-print">📸 Tire um print e mostre para a gente!</p>
+        <button id="btn-reiniciar" class="botao">Jogar de novo</button>
+      </section>
+    </main>
+
+    <footer>Feira de Ciências · 2º ano A Técnico - SENAI</footer>
+
+    <!-- Primeiro as perguntas, depois a lógica -->
+    <script src="perguntas.js"></script>
+    <script src="quiz.js"></script>
+  </body>
+</html>

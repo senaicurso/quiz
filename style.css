@@ -1,0 +1,235 @@
+/* =========================================================
+   ARQUIVO DO GRUPO VISUAL (Grupo B)
+   Mudem cores, fontes, bordas e animações à vontade!
+   Dica: comecem trocando as cores das variáveis abaixo.
+   ========================================================= */
+
+:root {
+  --fundo-1: #064e3b; /* verde escuro */
+  --fundo-2: #0c4a6e; /* azul escuro */
+  --cartao: #ffffff;
+  --texto: #0f172a;
+  --destaque: #10b981; /* verde dos botões */
+  --certo: #22c55e;
+  --errado: #ef4444;
+  --raio: 18px; /* arredondamento das bordas */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(160deg, var(--fundo-1), var(--fundo-2));
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 16px;
+}
+
+.app {
+  width: 100%;
+  max-width: 480px;
+  flex: 1;
+}
+
+/* ---------- telas ---------- */
+.tela {
+  display: none;
+  text-align: center;
+}
+.tela.ativa {
+  display: block;
+}
+.entrar {
+  animation: entrar 0.35s ease-out;
+}
+@keyframes entrar {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: 800;
+  margin: 8px 0;
+}
+h2 {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.35;
+  margin: 20px 0;
+}
+.subtitulo {
+  opacity: 0.9;
+  margin-bottom: 32px;
+}
+
+.emoji-grande {
+  font-size: 96px;
+  margin-top: 40px;
+}
+.flutuar {
+  animation: flutuar 3s ease-in-out infinite;
+}
+@keyframes flutuar {
+  50% {
+    transform: translateY(-14px);
+  }
+}
+.pular {
+  animation: pular 0.8s ease-out;
+}
+@keyframes pular {
+  0% {
+    transform: scale(0);
+  }
+  70% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ---------- botões ---------- */
+.botao {
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 800;
+  border: none;
+  border-radius: var(--raio);
+  padding: 16px 32px;
+  background: var(--destaque);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  transition: transform 0.15s;
+}
+.botao:active {
+  transform: scale(0.96);
+}
+
+/* ---------- barra de progresso ---------- */
+.topo {
+  font-size: 14px;
+  opacity: 0.9;
+}
+.barra {
+  height: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 99px;
+  margin-top: 8px;
+  overflow: hidden;
+}
+#progresso {
+  height: 100%;
+  width: 0;
+  background: var(--destaque);
+  transition: width 0.4s;
+}
+
+/* ---------- alternativas ---------- */
+#opcoes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.opcao {
+  font-family: inherit;
+  font-size: 17px;
+  text-align: left;
+  padding: 16px 18px;
+  border: 3px solid transparent;
+  border-radius: var(--raio);
+  background: var(--cartao);
+  color: var(--texto);
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+.opcao:active {
+  transform: scale(0.98);
+}
+.opcao:disabled {
+  cursor: default;
+  opacity: 0.6;
+}
+.opcao.certa {
+  border-color: var(--certo);
+  background: #dcfce7;
+  opacity: 1;
+}
+.opcao.errada {
+  border-color: var(--errado);
+  background: #fee2e2;
+  opacity: 1;
+  animation: tremer 0.4s;
+}
+@keyframes tremer {
+  25% {
+    transform: translateX(-6px);
+  }
+  75% {
+    transform: translateX(6px);
+  }
+}
+
+/* ---------- caixa de explicação ---------- */
+.feedback {
+  margin-top: 20px;
+  padding: 18px;
+  border-radius: var(--raio);
+  background: rgba(255, 255, 255, 0.12);
+  animation: entrar 0.3s ease-out;
+}
+.feedback.ok {
+  border-left: 6px solid var(--certo);
+}
+.feedback.nao {
+  border-left: 6px solid var(--errado);
+}
+#feedback-titulo {
+  font-weight: 800;
+  font-size: 20px;
+}
+#feedback-texto {
+  margin: 8px 0 16px;
+  text-align: left;
+}
+.escondido {
+  display: none;
+}
+
+/* ---------- resultado ---------- */
+.voce-e {
+  opacity: 0.85;
+  margin-top: 8px;
+}
+.pontos {
+  font-size: 18px;
+  font-weight: 600;
+  color: #a7f3d0;
+  margin-bottom: 12px;
+}
+#resultado-texto {
+  margin-bottom: 20px;
+}
+.dica-print {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 20px;
+}
+
+footer {
+  margin-top: 32px;
+  font-size: 13px;
+  opacity: 0.7;
+  text-align: center;
+}
